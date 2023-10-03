@@ -1,0 +1,16 @@
+.heading {
+    font-size: 40px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px; 
+     /* Adjust the color as needed */
+}
+.paragraph {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 20px; 
+    text-align: center; /* Adjust the color as needed */
+    /* Add some spacing between paragraphs */
+}
