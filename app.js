@@ -24,8 +24,11 @@ app.get("/login_reddit", async(req, res) => {
         })
 
         let TOKEN = body.access_token
+        let responseJSON = await response.json();
+        let username = await responseJSON.name;
+
         
-        response = await fetch('https://oauth.reddit.com/user/singhania_/overview', {
+        response = await fetch(`https://oauth.reddit.com/user/${username}/overview`, {
             method: "GET",
             headers: {
                 'User-Agent': 'MyAPI/0.0.1',
@@ -33,13 +36,10 @@ app.get("/login_reddit", async(req, res) => {
             }
         });
 
-        let responseJSON = await response.json();
+        responseJSON = await response.json();
         let upvotedList = await responseJSON.data.children;
         console.log(upvotedList)
 
-        // for(upvoted of upvotedList) {
-        //     console.log(upvoted)
-        // }
 
     } catch(e) {
         res.send({msg: "Something went wrong."})
